@@ -19,16 +19,12 @@ I wiil design and make a program that manages the data of a convenience store fo
 
 ## Success Criteria
 
-1. The solution has a secure registration and login system with secure passwords that all staff in the store can use and create an account in.
-2. The solution provides the information of all the products inside the sotre, base on features like:
-3. The solution stores and all relevant informaton about the staff of the stores 
-4. The application has a page dedicated to assigning, deleting and editing tasks for each staff member.
+1. The client can register a new account
+2. The client can log in to the application by using the information the previously registered.
+3. The program automatically hashes the users passowrd information.
+4. The program can store the information of items sold in tables by cateogories such as type, company, name, id, etc.
+5. The user can edit the tables by deleting, adding or updating information.
+6. The app uses databases to store information.
+7. The app has easy to understand labels and interface to make it easier for the client Meisa to implement it as her store.
 
-The solution provides a visual representation of the Humidity and Temperature values inside a dormitory (Local) and outside the house (Remote) for a period of minimum 48 hours. 
-2. ```[HL]``` The local variables will be measure using a set of 4 sensors around the dormitory.
-3. The solution provides a mathematical modelling for the Humidity and Temperature levels for each Local and Remote locations. ```(SL: linear model)```, ```(HL: non-lineal model)```
-4. The solution provides a comparative analysis for the Humidity and Temperature levels for each Local and Remote locations including mean, standad deviation, minimum, maximum, and median.
-5. ```(SL)```The Local samples are stored in a csv file and ```(HL)``` posted to the remote server.
-6. Create a prediction the subsequent 12 hours for both temperature and humidity.
-7. A poster summarizing the visual representations, model and analysis is created and communicated. (Should include a study of health levels)
 
