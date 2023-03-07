@@ -44,7 +44,7 @@ The development process will take approximately 4 weeks, after which I will cond
 5. The program can store the information of items sold in tables by cateogories such as type, company, name, id, etc.
 6. The user can edit the tables by deleting and adding.
 7. The table screens has a button that allows the user to update the information of the table after they added new items.
-8. The app uses databases to store information.
+8. The app uses databases to store information such as users and the data in the MDDataTables.
 9. The app has easy to understand labels and interface to make it easier for the client Meisa to implement it at her store.
 
 ## System Diagram
