@@ -12,10 +12,27 @@ Meisa is the manager of a convenience store. Last year while doing the end of ye
 
 
 ## Proposed Solution
----
+To create the program, I will use Python and KivyMD to build a user interface that allows Meisa to manage the data for her store. I will use an object-oriented approach (OPP) to create classes for the various data entities like products, suppliers, aisles, and staff, and use methods within each class to manage the data.
+
+I will use a SQL database to store and manage the data for the store. The database will be designed with MDDataTables for each of the data entities. I will use the SQLite database management system, which is simple and compatible with Python.
+
+To create the user interface, I will use the KivyMD framework, which is built on top of Kivy and provides a set of ready-to-use GUI components and styles. I will design the user interface with a focus on simplicity and ease of use, ensuring that Meisa can quickly and easily access and manage the data she needs.
+
+Throughout the development process, I will conduct regular testing and debugging to ensure the program is functional and free of errors. I will also conduct user testing with Meisa to gather feedback, incorporating her suggestions and addressing any issues that arise. To ensure the program remains relevant and useful throughout the year, I will design it to allow Meisa to add or change data as needed. This will involve designing forms and input fields that allow Meisa to input new data and update existing data.
+
+Overall, this solution will provide Meisa with an efficient, user-friendly program to manage the data for her convenience store. The use of Python, KivyMD, and a SQL database will ensure the program is fast, reliable, and scalable, while the human-centered design approach will ensure it is easy to use and meets Meisa's needs.
+
+
 
 **Design statement**
-I wiil design and make a program that manages the data of a convenience store for Meisa. The program will allow Meisa to store and manage all important information related to products, suppliers, aisle and staff. The data will be stred in one program to avoid disorganization and other difficulties like last year. Te program will be constructed with with human disign as a foucus, making it easy for everyone working at the store to ouse and manage the data. The program will be made using the software Python and will be evaluated based on criteria A, B, C and D. It will take aopproixmately 4 weeks to complete and will allow Mesia to add or change data as the year progresses. The program will be designed to be simple, coherent and effective in managing the sore's data, ensureing a more organized and efficient end of year report process. 
+I will design and develop a user-friendly program to help Meisa manage the data of her convenience store. The program will allow Meisa to store and manage all the essential information related to products, suppliers, aisle, and staff in a centralized database, eliminating the disorganization and tediousness of the previous process. The program will be designed with a human-centered approach, making it simple and easy to use for everyone working at the store.
+
+The program will be developed using the Python programming language and the KivyMD user interface framework. The program will be designed using an object-oriented approach with classes to manage the data entities of aisles and staff. The program will be developed using a SQL database, which will enable efficient data storage, retrieval, and management. The database will be designed with tables for each of the data entities.
+
+To ensure the program is user-friendly, I will conduct user testing throughout the development process, soliciting feedback from Meisa to identify any areas for improvement. I will also evaluate the program against Criteria A, B, C, and D to ensure it meets Meisa's requirements and is effective in managing the store's data.
+
+The development process will take approximately 4 weeks, after which I will conduct a final round of testing and client meeting before finalizing the program for Meisa's store. The program will be designed to allow Meisa to add or delete data as the year progresses, ensuring the program remains relevant and useful throughout the year.
+
 
 
 ## Success Criteria
