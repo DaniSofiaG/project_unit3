@@ -17,6 +17,9 @@ Meisa is the manager of a convenience store. Last year while doing the end of ye
 **Design statement**
 I wiil design and make a program that manages the data of a convenience store for Meisa. The program will allow Meisa to store and manage all important information related to products, suppliers, aisle and staff. The data will be stred in one program to avoid disorganization and other difficulties like last year. Te program will be constructed with with human disign as a foucus, making it easy for everyone working at the store to ouse and manage the data. The program will be made using the software Python and will be evaluated based on criteria A, B, C and D. It will take aopproixmately 4 weeks to complete and will allow Mesia to add or change data as the year progresses. The program will be designed to be simple, coherent and effective in managing the sore's data, ensureing a more organized and efficient end of year report process. 
 
+## System Diagram
+![Untitled drawing (1)](https://user-images.githubusercontent.com/111941990/223356968-c7c84020-cb83-49b1-9d33-a996e0f774d5.png)
+
 ## Success Criteria
 
 1. The client can register a new account
