@@ -39,11 +39,13 @@ The development process will take approximately 4 weeks, after which I will cond
 
 1. The client can register a new account
 2. The client can log in to the application by using the information the previously registered.
-3. The program automatically hashes the users passowrd information.
-4. The program can store the information of items sold in tables by cateogories such as type, company, name, id, etc.
-5. The user can edit the tables by deleting, adding or updating information.
-6. The app uses databases to store information.
-7. The app has easy to understand labels and interface to make it easier for the client Meisa to implement it as her store.
+3. The registration has an pasword and email policy.
+4. The program automatically hashes the users passowrd information.
+5. The program can store the information of items sold in tables by cateogories such as type, company, name, id, etc.
+6. The user can edit the tables by deleting and adding.
+7. The table screens has a button that allows the user to update the information of the table after they added new items.
+8. The app uses databases to store information.
+9. The app has easy to understand labels and interface to make it easier for the client Meisa to implement it at her store.
 
 ## System Diagram
 ![Untitled drawing (2)](https://user-images.githubusercontent.com/111941990/223357612-a1415042-da9f-454f-8bc4-2a2bb066b110.png)
