@@ -59,3 +59,157 @@ The development process will take approximately 4 weeks, after which I will cond
 |    3    |       Identify the client's problem      |                            Problem definition on git hub                            |     7 min     |         Feb 16         |     A     |
 |    4    |          Craft design statement          |             Design statement in git hub and a clearer course of action              |     15 min    |         Feb 18         |     A     |
 |    5    |       Getting the client's approval      | Evidence of the clients agreement with the proposed solution  and design sptatement |     10 min    |         Feb 19         |     A     |
+
+---
+<img width="1136" alt="Screen Shot 2023-03-08 at 17 57 36" src="https://user-images.githubusercontent.com/111941990/223668408-4ba5ab24-015b-46df-93ba-89971d0159f9.png">
+
+
+# Criterion C- Development
+## SQL Database & Tables
+As part of my progrma I created a database to store the particular data in the program such as users and items. I did it using SQLite and creating tables in side my ```.py db_login.db``` database. To do so I connected my python file to my SQLlite databese and used a query to create the MDDatatabel, the I exectued th equery, commited it to the app and closed the connection with the database. 
+
+
+```.py
+connection = sqlite3.connect("db_login.db")
+cursor = connection.cursor()
+
+query = f"""CREATE TABLE if not exists users(
+    id INTEGER PRIMARY KEY,
+    email text NOT NULL unique,
+    password text NOT NULL,
+    username text not null
+)
+"""
+
+cursor.execute(query)
+connection.commit()
+connection.close()
+```
+
+## Login
+```.py
+class LoginScreen(MDScreen):
+    def try_login(self):
+        print("User tried to login")
+        # Get the input username and password and print it
+        uname = self.ids.uname.text
+        passwd = self.ids.passwd.text
+        query = f"SELECT * from users WHERE username='{uname}'"
+        db = database_worker("db_login.db")
+        result = db.search(query=query)
+        db.close()
+
+        if len(result) == 1:
+            id, email, hashed, uname = result[0]
+            if check_password(user_password=passwd, hashed_password=hashed):
+                self.parent.current = "MenuScreen"
+                self.ids.uname.text = ""
+                self.ids.passwd.text = ""
+            else:
+                self.parent.current = "LoginScreen"
+                print("Passwords don't match")
+
+```
+
+## Registration
+```.py
+class RegistrationScreen(MDScreen):
+    def try_register(self):
+        print("this is the registration")
+        uname = self.ids.uname.text
+        email = self.ids.email.text
+        passwd = self.ids.passwd.text
+        passwd_check = self.ids.passwd_check.text
+```
+#### Password policy
+```.py
+# Check password policy
+        if len(passwd) < 6 or " " in passwd or passwd != passwd_check:
+            if len(passwd) < 6:
+                self.ids.passwd.error = True
+                self.ids.passwd.helper_text = "Password must be at least 6 characters"
+            if " " in passwd:
+                self.ids.passwd.error = True
+                self.ids.passwd.helper_text = "Password cannot contain spaces"
+            if passwd != passwd_check:
+                self.ids.passwd_confirm.error = True
+                self.ids.passwd_confirm.helper_text = "Passwords do not match"
+            return
+```
+
+#### Email policy
+```.py
+# Check email policy
+        if "@" not in email:
+            self.ids.email.error = True
+            self.ids.email.helper_text = "Invalid email"
+            return
+```
+
+```.py
+# All policies, proceed with registration
+        hash = encrypt_password(passwd)
+        db = database_worker("db_login.db")
+        query = f"INSERT into users (email, password, username) values('{email}', '{hash}','{uname}')"
+        db.run_save(query)
+        db.close()
+
+        print("Registration completed")
+        MDSpinner(
+            size_hint=(None, None),
+            size=(dp(46), dp(46)),
+            pos_hint={'center_x': .5, 'center_y': .5},
+            active=True,
+            palette=[
+                [0.28627450980392155, 0.8431372549019608, 0.596078431372549, 1],
+                [0.3568627450980392, 0.3215686274509804, 0.8666666666666667, 1],
+                [0.8862745098039215, 0.36470588235294116, 0.592156862745098, 1],
+                [0.8784313725490196, 0.9058823529411765, 0.40784313725490196, 1],
+            ]
+        )
+        self.parent.current = "LoginScreen"
+
+    def cancel(self):
+        self.parent.current = "LoginScreen"
+```
+
+## MDDataTables
+
+```.py
+    def __init__(self, **kwargs):
+        MDScreen.__init__(self, **kwargs)
+
+        # Define columns and rows for the MDDataTable
+        self.data_table = MDDataTable(
+            size_hint=(0.9, 0.7),
+            pos_hint={"center_x": 0.5, "center_y": 0.5},
+            check=True,
+            use_pagination=True,
+            column_data=[
+                ("id", dp(30)),
+                ("Item", dp(30)),
+                ("Aisle", dp(30)),
+                ("Shelve", dp(30)),
+                ("Amount", dp(20)),
+                ("Company", dp(30))
+            ],
+            row_data=[
+                ("Item 1", "1", "2", "3", "Company A"),
+                ("Item 2", "4", "5", "6", "Company B")
+            ]
+        )
+
+        # add table
+        self.data_table.bind(on_row_press=self.row_pressed)
+        self.data_table.bind(on_check_press=self.check_pressed)
+        self.add_widget(self.data_table)
+        self.update()
+
+    def row_pressed(self, table, row):
+        print("a row was pressed", row.text)
+        row.md_bg_color = "#EFCB68"
+
+    def check_pressed(self, table, current_row):
+        print("a row was checked", current_row)
+
+```
