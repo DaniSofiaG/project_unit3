@@ -141,6 +141,9 @@ The development process will take approximately 4 weeks, after which I will cond
 
 
 # Criterion C- Development
+<img width="183" alt="Screen Shot 2023-03-10 at 0 44 10" src="https://user-images.githubusercontent.com/111941990/224100277-e0e4fb1e-441a-4425-94f3-e48ee458a0a8.png">
+
+
 ## SQL Database & Tables
 As part of my progrma I created a database to store the particular data in the program such as users and items. I did it using SQLite and creating tables in side my ```.py db_login.db``` database. To do so I connected my python file to my SQLlite databese and used a query to create the MDDatatabel, the I exectued th equery, commited it to the app and closed the connection with the database. 
 
