@@ -52,9 +52,14 @@ The development process will take approximately 4 weeks, after which I will cond
 ---
 <img width="1136" alt="Screen Shot 2023-03-08 at 17 57 36" src="https://user-images.githubusercontent.com/111941990/223959197-cdfeb104-c252-49ea-b28d-ca950ae8240d.png">
 
+# Criterion B- Planning
 
 ## System Diagram
 ![Project_3 system diagram](https://user-images.githubusercontent.com/111941990/223882562-09e23bb1-13d5-4bc1-994e-e5b2b9038f9b.png)
+
+## Wireframe Diagram
+![Wireframe diagram](https://user-images.githubusercontent.com/111941990/223981617-c528ec9f-281d-41d9-9372-095605d71c3f.png)
+
 
 
 ## Test Plan
