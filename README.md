@@ -378,8 +378,10 @@ Finally, the ```close``` method closes the connection to the database by calling
 ## KivyMD File
 This is my complete ```kivyMD``` file where I strudctured my entire program, creating layouts to stucture approcirate text and labels, buttons and a bottom menu that allows the client and any user of the progam to navigate the app.
 
+```#login.kv```
+
+### ScreenManager
 ```.py
-#login.kv
 ScreenManager:
     LoginScreen:
         name: "LoginScreen"
@@ -421,6 +423,8 @@ ScreenManager:
 
     InventoryScreen:
         name: "InventoryScreen"
+```
+I used the Screen Manager to control al organize the screens in the application. First I created the screen so that the user could navigate them and later in the code I added them to as ther own screen where I added content such as MDbuttons, MDlabels and MDtextFields.
 
 <HomeScreen>:
     FitImage:
