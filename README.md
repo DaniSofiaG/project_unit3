@@ -66,6 +66,10 @@ The development process will take approximately 4 weeks, after which I will cond
 |    4    |          Craft design statement          |             Design statement in git hub and a clearer course of action              |     15 min    |         Feb 18         |     A     |
 |    5    |       Getting the client's approval      | Evidence of the clients agreement with the proposed solution  and design sptatement |     10 min    |         Feb 19         |     A     |
 
+
+# Evidence
+<img width="1067" alt="Screen Shot 2023-03-09 at 9 03 36" src="https://user-images.githubusercontent.com/111941990/223880914-0af17701-eef8-40fa-94d8-4d15886c84ab.png">
+
 ---
 <img width="1108" alt="Screen Shot 2023-03-09 at 17 04 23" src="https://user-images.githubusercontent.com/111941990/223959341-1fd88518-b2d1-42e1-bdee-cfa5b9f58872.png">
 
@@ -272,8 +276,6 @@ class Inventory:
         self.db.close()
 ```
 
-# Evidence
-<img width="1067" alt="Screen Shot 2023-03-09 at 9 03 36" src="https://user-images.githubusercontent.com/111941990/223880914-0af17701-eef8-40fa-94d8-4d15886c84ab.png">
 
 ---
 <img width="1054" alt="Screen Shot 2023-03-09 at 17 07 23" src="https://user-images.githubusercontent.com/111941990/223959565-75731030-1a0a-4136-8079-861c4903a393.png">
