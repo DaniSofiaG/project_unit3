@@ -317,6 +317,14 @@ class Inventory:
     def close(self):
         self.db.close()
 ```
+Unlike the other aisle classes, this is the ```Inventory``` which takes all data from the rest of the aisle tables and relates it all by saving it into the same table and shows it all in one MDDataTable. The class has several methods that interact with a database. The constructor of the class takes a parameter db_name, which is the name of the database to be used by the class.
+
+The method ```get_all_data``` returns all the data from five different tables in the database. The data is retrieved using a ```SELECT``` statement on each table and appends it to the ```all_data``` list. Finally, the ```all_data``` list is returned.
+
+The method ```save_to_complete_inventory``` creates a new table named ```complete_inventory``` in the database and inserts data into it. The method first drops the complete_inventory table if it already exists. Then, it creates the ```complete_inventory``` table with five columns: id, item, aisle, shelve, amount, and company. Finally, the method loops through each item in the parameter and inserts it into the ```complete_inventory``` table using an ```INSERT``` statement.
+
+Finally, the ```close``` method closes the connection to the database by calling the ```close``` method on the ```database_worker```.
+
 
 
 ---
