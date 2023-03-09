@@ -40,14 +40,15 @@ The development process will take approximately 4 weeks, after which I will cond
 ## Success Criteria
 
 1. The client can register a new account
-2. The client can log in to the application by using the information the previously registered.
+2. The client can log in to the application by using the information they previously registered.
 3. The registration has an pasword and email policy.
-4. The program automatically hashes the users passowrd information.
+4. The program automatically hashes the user's password information.
 5. The program can store the information of items sold in tables by cateogories such as type, company, name, id, etc.
 6. The user can edit the tables by deleting and adding.
 7. The table screens has a button that allows the user to show the information of the table after they added new items.
-8. The app uses databases to store information such as users and the data in the MDDataTables.
-9. The app has easy to understand labels and interface to make it easier for the client Meisa to implement it at her store.
+8. The program contains a table where all items are stored, so that Meisa can check the complete inventory without having to visit all aisles.
+9. The app uses databases to store information such as users and the data in the MDDataTables.
+10. The app has easy to understand labels and interface to make it easier for the client, Meisa to implement it at her store.
 
 ---
 <img width="1136" alt="Screen Shot 2023-03-08 at 17 57 36" src="https://user-images.githubusercontent.com/111941990/223959197-cdfeb104-c252-49ea-b28d-ca950ae8240d.png">
