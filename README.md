@@ -188,6 +188,17 @@ In the program, the  ```try_register()``` function is called when the user click
                 self.ids.passwd_confirm.helper_text = "Passwords do not match"
             return
 ```
+My password policy for the client checks the input password based on password length, spaces, and that the password and the password confirmation match.
+
+The code starts by checking the length of the input password. If the password length is less than 6 characters, an error message is displayed to the user. The input field will also be marked with an error flag to draw the user's attention.
+
+The next check ensures that there are no spaces in the password. If a space is detected, the error message will be displayed, and the input field marked with an error flag.
+
+Finally, the code checks to see if the input password matches the confirmation password. If they do not match, the error message will be displayed, and the input field for the confirmation password will be marked with an error flag.
+
+If any of the checks fail, the function will return, preventing the registration process from proceeding. If all the checks pass, the user will be redirected to the ```loginScreen```.
+
+
 #### Email policy
 ```.py
 # Check email policy
