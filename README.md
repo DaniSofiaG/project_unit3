@@ -207,6 +207,7 @@ If any of the checks fail, the function will return, preventing the registration
             self.ids.email.helper_text = "Invalid email"
             return
 ```
+This section of the code is like the password policy, but for the email input. It is a validation check that verifies whether a given email address contains the "@" symbol.
 
 ```.py
 # All policies, proceed with registration
@@ -234,6 +235,7 @@ If any of the checks fail, the function will return, preventing the registration
     def cancel(self):
         self.parent.current = "LoginScreen"
 ```
+And finally, this part finalizes the registration and saves it into ```users``` table.
 
 ## MDDataTables
 
