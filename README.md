@@ -171,7 +171,7 @@ class RegistrationScreen(MDScreen):
         passwd = self.ids.passwd.text
         passwd_check = self.ids.passwd_check.text
 ```
-In the program, the  ```try_register() function is called when the user clicks on the ```Register``` button. The function starts by retrieving the input data from the respective text input fields. Then it stores the username in the ```uname``` variable, the email in the ```email``` variable, and the password and password confirmation in ```passwd``` and ```passwd_check``` variables.
+In the program, the  ```try_register()``` function is called when the user clicks on the ```Register``` button. The function starts by retrieving the input data from the respective text input fields. Then it stores the username in the ```uname``` variable, the email in the ```email``` variable, and the password and password confirmation in ```passwd``` and ```passwd_check``` variables.
 
 #### Password policy
 ```.py
