@@ -426,160 +426,37 @@ ScreenManager:
 ```
 I used the Screen Manager to control al organize the screens in the application. First I created the screen so that the user could navigate them and later in the code I added them to as ther own screen where I added content such as MDbuttons, MDlabels and MDtextFields.
 
-<HomeScreen>:
-    FitImage:
-        source:"kon.jpg"
 
-    MDCard:
-        size_hint: .6, .8
-        pos_hint: {"center_x":.5, "center_y":.54}
-        orientation: "vertical"
-
-        MDLabel:
-            size_hint: 1,.3
-            font_style: "H2"
-            text: "Welcome!"
-            pos_hint: {"center_x":.5, "center_y":.9}
-            halign: "center"
-
-    MDRaisedButton:
-        text: "Log Out"
-        size_hint_x: 0.5
-        pos_hint: {"center_x":.5, "center_y":.4}
-        on_press: app.root.current = "LoginScreen"
-        md_bg_color: "pink"
+### MDRaisedButtons
+```.py
+MDRaisedButton:
+    id: login
+    text: "Login"
+    md_bg_color: "#FFC857"
+    on_press: root.try_login()
+    size_hint: .5, 1
+```
+Using MDRaisedButtons such as the login button, I called my methods and classes back in the python file so that the application was functional, I also connected the button to the navigation of the app so that the user can move throwugh the screens I previously impomented on the screen manager.
 
 
-    MDRaisedButton:
-        text: "Aisles"
-        size_hint_x: 0.5
-        pos_hint: {"center_x":.5, "center_y":.3}
-        on_press: app.root.current = "MenuScreen"
-        md_bg_color: "lightblue"
+### MDTextFields - Helper Text
+```.py
+MDTextField:
+    id: email
+    size_hint: .8, .1
+    pos_hint: {"center_x":.5}
+    hint_text: "Email"
+    helper_text_mode: "on_error"
+    helper_text: "Invalid email"
+    icon_right: "email"
+    icon_right_color: app.theme_cls.primary_color
+    required: True
+```
+In order to fullfill my success criteria of having a passowrd and email policy while still having the application be very user-fiendly I had to ass warning text on the policies so that the user could understand in the case they couldn't regiser due to teither of this policies.
 
 
-
-
-<LoginScreen>:
-    FitImage:
-        source:"kon.jpg"
-    MDCard:
-        size_hint: .6, .8
-        pos_hint: {"center_x":.5, "center_y":.54}
-        orientation: "vertical"
-
-        MDLabel:
-            size_hint: 1,.3
-            font_style: "H2"
-            text: "Login"
-            halign: "center"
-
-        MDTextField:
-            id: uname
-            hint_text: "Username"
-            size_hint: .8, .1
-            pos_hint: {"center_x":.5}
-
-        MDTextField:
-            id:passwd
-            hint_text: "Password"
-            password: True
-            size_hint: .8, .1
-            pos_hint: {"center_x":.5}
-
-        MDBoxLayout:
-            size_hint: 1,.1
-
-            MDRaisedButton:
-                id: login
-                text: "Login"
-                md_bg_color: "#FFC857"
-                on_press: root.try_login()
-                size_hint: .5, 1
-
-            MDRaisedButton:
-                text: "Register"
-                md_bg_color: "#e63946"
-                on_press: root.parent.current = "RegistrationScreen"
-                size_hint: .5, 1
-
-
-
-<RegistrationScreen>:
-    FitImage:
-        source: "kon.jpg"
-    MDSpinner:
-        size_hint: None, None
-        size: dp(27), dp(27)
-        pos_hint: {'center_x': .5, 'center_y': .1}
-        determinate: True
-
-    MDCard:
-        size_hint: .6, .8
-        pos_hint: {"center_x":.5, "center_y":.54}
-        orientation: "vertical"
-
-        MDLabel:
-            size_hint: 1,.1
-            font_style: "H4"
-            text: "Register"
-            halign: "center"
-
-        MDTextField:
-            id: uname
-            hint_text: "Username "
-            size_hint: .8, .1
-            pos_hint: {"center_x":.5}
-
-        MDTextField:
-            id: email
-            size_hint: .8, .1
-            pos_hint: {"center_x":.5}
-            hint_text: "Email"
-            helper_text_mode: "on_error"
-            helper_text: "Invalid email"
-            icon_right: "email"
-            icon_right_color: app.theme_cls.primary_color
-            required: True
-            line_color_normal: app.theme_cls.primary_color
-            color_active: app.theme_cls.primary_color
-
-        MDTextField:
-            id:passwd
-            hint_text: "Password"
-            password: True
-            size_hint: .8, .1
-            pos_hint: {"center_x":.5}
-            helper_text_mode: "on_error"
-
-        MDTextField:
-            id:passwd_check
-            hint_text: "Confirm password"
-            password: True
-            size_hint: .8, .1
-            pos_hint: {"center_x":.5}
-            helper_text_mode: "on_error"
-
-
-        MDBoxLayout:
-            size_hint: 1,.1
-
-            MDRaisedButton:
-                id: login
-                text: "Back"
-                md_bg_color: "#FFC857"
-                on_press: root.manager.current = "LoginScreen"
-                size_hint: .5, 1
-
-            MDRaisedButton:
-                text: "Register"
-                md_bg_color: "#e63946"
-                on_press: root.try_register()
-                size_hint: .5, 1
-
-
-
-
+### MenuScreen- MDBottomNavigation
+```.py
 <MenuScreen>:
     FitImage:
         source:"kon.jpg"
@@ -590,34 +467,6 @@ I used the Screen Manager to control al organize the screens in the application.
         text_color_active: "pink"
 
         MDBottomNavigationItem:
-            md_bg_color: "#FFE381"
-            name: 'HomeScreen'
-            text: 'LogOut'
-            icon: 'home'
-            text_color_active: 0, 0, 0, 1
-            on_tab_press: root.manager.current="HomeScreen"
-
-            MDCard:
-                size_hint: .6, .8
-                pos_hint: {"center_x":.5, "center_y":.54}
-                orientation: "vertical"
-                FitImage:
-                    source:"kon.jpg"
-
-                MDLabel:
-                    size_hint: 1,.3
-                    font_style: "H2"
-                    text: "LogOut"
-                    halign: "center"
-
-                MDRaisedButton:
-                    text: "Log Out"
-                    size_hint_x: 0.9
-                    pos_hint: {"center_x":.5, "center_y":.3}
-                    on_press: app.root.current = "LoginScreen"
-                    md_bg_color: "pink"
-
-        MDBottomNavigationItem:
             name: 'PersonalScreen'
             text: 'Personals'
             icon: 'hanger'
@@ -626,66 +475,12 @@ I used the Screen Manager to control al organize the screens in the application.
 
             FitImage:
                 source:"toothpaste.jpeg"
+```
+For my MenuScreen I implemented MDBottomNavigation, the code I took it for the kivymd website (The citation is in the citation appendix on this repository). The MDBottomNavigation helped make the application a lot more interactive and efficient when having to navigate it, it uses icon as buttons that take the user through the different section of the application.
 
 
-
-        MDBottomNavigationItem:
-            name: 'SnacksScreen'
-            text: 'Snacks'
-            icon: 'candy'
-            text_color_active: 0, 0, 0, 1
-            on_tab_press: root.manager.current="SnacksScreen"
-
-            FitImage:
-                source:"doritos.png"
-
-
-
-        MDBottomNavigationItem:
-            name: 'BakeryScreen'
-            text: 'Bakery'
-            icon: 'food-croissant'
-            text_color_active: 0, 0, 0, 1
-            on_tab_press: root.manager.current="BakeryScreen"
-
-            FitImage:
-                source:"Anime Foodie.jpeg"
-
-
-
-        MDBottomNavigationItem:
-            name: 'MealsScreen'
-            text: 'Meals'
-            icon: 'food-turkey'
-            text_color_active: 0, 0, 0, 1
-            on_tab_press: root.manager.current="MealsScreen"
-
-            FitImage:
-                source: "noodles.jpeg"
-
-
-        MDBottomNavigationItem:
-            name: 'FridgesScreen'
-            text: 'Fridges'
-            icon: 'fridge'
-            text_color_active: 0, 0, 0, 1
-            on_tab_press: root.manager.current="FridgesScreen"
-
-            FitImage:
-                source:"olipop.jpeg"
-
-        MDBottomNavigationItem:
-            name: 'InventoryScreen'
-            text: 'Inventory'
-            icon: 'clipboard-list'
-            text_color_active: 0, 0, 0, 1
-            on_tab_press: root.manager.current="InventoryScreen"
-
-            FitImage:
-                source:"kon.jpg"
-
-
-
+### Aisle & Inventory Screens
+```.py
 <PersonalScreen>:
     MDBoxLayout:
         orientation: "vertical"
@@ -726,7 +521,12 @@ I used the Screen Manager to control al organize the screens in the application.
                 icon: "content-save"
                 pos_hint: {"center_x": .5, "center_y":.1}
                 on_release: root.update()
+```
+This is a sample of the look and structure of all my aisle and inventory screens, becuase I used thsi code as a base to create the rest of the aisles.
 
+
+ ### AddItemScreen
+ ```.py
 <AddItemScreen>:
     FitImage:
         source: "purple.jpeg"
@@ -794,445 +594,8 @@ I used the Screen Manager to control al organize the screens in the application.
             icon: "cancel"
             pos_hint: {"center_x": 0.5}
             on_release: app.root.current = "PersonalScreen"
-
-#Snacks
-<SnacksScreen>:
-    MDBoxLayout:
-        orientation: "vertical"
-        MDCard:
-            md_bg_color: "#FE7F2D"
-            size_hint: .6, .1
-            pos_hint: {"center_x":.5, "center_y":.5}
-            orientation: "vertical"
-
-            MDLabel:
-                size_hint: 1,.1
-                font_style: "H3"
-                text: "Aisle 2"
-                halign: "center"
-
-        MDBoxLayout:
-            orientation: "horizontal"
-
-            MDFillRoundFlatIconButton:
-                text: "Back"
-                icon: "arrow-left"
-                pos_hint: {"center_x": .5, "center_y":.1}
-                on_release: app.root.current = "MenuScreen"
-
-            MDRaisedButton:
-                text: "Delete"
-                size_hint_x: .1
-                pos_hint: {"center_x":.5, "center_y":.1}
-                on_press: root.delete()
-            MDRaisedButton:
-                text: "Add"
-                size_hint_x: .1
-                pos_hint: {"center_x":.5, "center_y":.1}
-                on_press: app.root.current = "new_item_2"
-            MDFillRoundFlatIconButton:
-                text: "Update"
-                icon: "content-save"
-                pos_hint: {"center_x": .5, "center_y":.1}
-                on_release: root.update()
-
-<AddItemScreen_2>:
-    MDBoxLayout:
-        orientation: "vertical"
-        spacing: dp(10)
-        padding: dp(20)
-
-        MDTextField:
-            id: Item  # Fixed id name
-            hint_text: "Item"
-            mode: "fill"
-            fill_color: 1, 1, 1, 0.8
-            icon_right: "barcode-scan"
-            icon_right_color: app.theme_cls.primary_color
-
-        MDTextField:
-            id: Aisle
-            hint_text: "Aisle"
-            mode: "fill"
-            fill_color: 1, 1, 1, 0.8
-            icon_right: "arrow-right"
-            icon_right_color: app.theme_cls.primary_color
-
-        MDTextField:
-            id: Shelve
-            hint_text: "Shelve"
-            mode: "fill"
-            fill_color: 1, 1, 1, 0.8
-            icon_right: "arrow-right"
-            icon_right_color: app.theme_cls.primary_color
-
-        MDTextField:
-            id: Amount
-            hint_text: "Amount"
-            mode: "fill"
-            fill_color: 1, 1, 1, 0.8
-            icon_right: "numeric"
-            icon_right_color: app.theme_cls.primary_color
-
-        MDTextField:
-            id: Company
-            hint_text: "Company"
-            mode: "fill"
-            fill_color: 1, 1, 1, 0.8
-            icon_right: "office-building"
-            icon_right_color: app.theme_cls.primary_color
-
-        MDFillRoundFlatIconButton:
-            text: "Save"
-            icon: "content-save"
-            pos_hint: {"center_x": 0.5}
-            on_release: root.new_item_2()
-
-        MDFillRoundFlatIconButton:
-            text: "Cancel"
-            icon: "cancel"
-            pos_hint: {"center_x": 0.5}
-            on_release: app.root.current = "SnacksScreen"
-
-
-#Bakery
-<BakeryScreen>:
-    MDBoxLayout:
-        orientation: "vertical"
-        MDCard:
-            md_bg_color: "#FFE381"
-            size_hint: .6, .1
-            pos_hint: {"center_x":.5, "center_y":.5}
-            orientation: "vertical"
-
-            MDLabel:
-                size_hint: 1,.1
-                font_style: "H3"
-                text: "Aisle 3"
-                halign: "center"
-
-
-        MDBoxLayout:
-            orientation: "horizontal"
-
-            MDFillRoundFlatIconButton:
-                text: "Back"
-                icon: "arrow-left"
-                pos_hint: {"center_x": .5, "center_y":.1}
-                on_release: app.root.current = "MenuScreen"
-
-            MDRaisedButton:
-                text: "Delete"
-                size_hint_x: .1
-                pos_hint: {"center_x":.5, "center_y":.1}
-                on_press: root.delete()
-            MDRaisedButton:
-                text: "Add"
-                size_hint_x: .1
-                pos_hint: {"center_x":.5, "center_y":.1}
-                on_press: app.root.current = "new_item_3"
-            MDFillRoundFlatIconButton:
-                text: "Update"
-                icon: "content-save"
-                pos_hint: {"center_x": .5, "center_y":.1}
-                on_release: root.update()
-
-<AddItemScreen_3>:
-    MDBoxLayout:
-        orientation: "vertical"
-        spacing: dp(10)
-        padding: dp(20)
-
-        MDTextField:
-            id: Item  # Fixed id name
-            hint_text: "Item"
-            mode: "fill"
-            fill_color: 1, 1, 1, 0.8
-            icon_right: "barcode-scan"
-            icon_right_color: app.theme_cls.primary_color
-
-        MDTextField:
-            id: Aisle
-            hint_text: "Aisle"
-            mode: "fill"
-            fill_color: 1, 1, 1, 0.8
-            icon_right: "arrow-right"
-            icon_right_color: app.theme_cls.primary_color
-
-        MDTextField:
-            id: Shelve
-            hint_text: "Shelve"
-            mode: "fill"
-            fill_color: 1, 1, 1, 0.8
-            icon_right: "arrow-right"
-            icon_right_color: app.theme_cls.primary_color
-
-        MDTextField:
-            id: Amount
-            hint_text: "Amount"
-            mode: "fill"
-            fill_color: 1, 1, 1, 0.8
-            icon_right: "numeric"
-            icon_right_color: app.theme_cls.primary_color
-
-        MDTextField:
-            id: Company
-            hint_text: "Company"
-            mode: "fill"
-            fill_color: 1, 1, 1, 0.8
-            icon_right: "office-building"
-            icon_right_color: app.theme_cls.primary_color
-
-        MDFillRoundFlatIconButton:
-            text: "Save"
-            icon: "content-save"
-            pos_hint: {"center_x": 0.5}
-            on_release: root.new_item_3()
-
-        MDFillRoundFlatIconButton:
-            text: "Cancel"
-            icon: "cancel"
-            pos_hint: {"center_x": 0.5}
-            on_release: app.root.current = "BakeryScreen"
-
-#MEALSSCREEN AISLE 4
-<MealsScreen>:
-    MDBoxLayout:
-        orientation: "vertical"
-        MDCard:
-            md_bg_color: "#EB4511"
-            size_hint: .6, .1
-            pos_hint: {"center_x":.5, "center_y":.5}
-            orientation: "vertical"
-
-            MDLabel:
-                size_hint: 1,.1
-                font_style: "H3"
-                text: "Aisle 4"
-                halign: "center"
-
-
-        MDBoxLayout:
-            orientation: "horizontal"
-
-            MDFillRoundFlatIconButton:
-                text: "Back"
-                icon: "arrow-left"
-                pos_hint: {"center_x": .5, "center_y":.1}
-                on_release: app.root.current = "MenuScreen"
-
-            MDRaisedButton:
-                text: "Delete"
-                size_hint_x: .1
-                pos_hint: {"center_x":.5, "center_y":.1}
-                on_press: root.delete()
-            MDRaisedButton:
-                text: "Add"
-                size_hint_x: .1
-                pos_hint: {"center_x":.5, "center_y":.1}
-                on_press: app.root.current = "new_item_4"
-            MDFillRoundFlatIconButton:
-                text: "Update"
-                icon: "content-save"
-                pos_hint: {"center_x": .5, "center_y":.1}
-                on_release: root.update()
-
-<AddItemScreen_4>:
-    MDBoxLayout:
-        orientation: "vertical"
-        spacing: dp(10)
-        padding: dp(20)
-
-        MDTextField:
-            id: Item  # Fixed id name
-            hint_text: "Item"
-            mode: "fill"
-            fill_color: 1, 1, 1, 0.8
-            icon_right: "barcode-scan"
-            icon_right_color: app.theme_cls.primary_color
-
-        MDTextField:
-            id: Aisle
-            hint_text: "Aisle"
-            mode: "fill"
-            fill_color: 1, 1, 1, 0.8
-            icon_right: "arrow-right"
-            icon_right_color: app.theme_cls.primary_color
-
-        MDTextField:
-            id: Shelve
-            hint_text: "Shelve"
-            mode: "fill"
-            fill_color: 1, 1, 1, 0.8
-            icon_right: "arrow-right"
-            icon_right_color: app.theme_cls.primary_color
-
-        MDTextField:
-            id: Amount
-            hint_text: "Amount"
-            mode: "fill"
-            fill_color: 1, 1, 1, 0.8
-            icon_right: "numeric"
-            icon_right_color: app.theme_cls.primary_color
-
-        MDTextField:
-            id: Company
-            hint_text: "Company"
-            mode: "fill"
-            fill_color: 1, 1, 1, 0.8
-            icon_right: "office-building"
-            icon_right_color: app.theme_cls.primary_color
-
-        MDFillRoundFlatIconButton:
-            text: "Save"
-            icon: "content-save"
-            pos_hint: {"center_x": 0.5}
-            on_release: root.new_item_4()
-
-        MDFillRoundFlatIconButton:
-            text: "Cancel"
-            icon: "cancel"
-            pos_hint: {"center_x": 0.5}
-            on_release: app.root.current = "MealsScreen"
-
-#FRIDGESSCREEN AISLE 5
-<FridgesScreen>:
-    MDBoxLayout:
-        orientation: "vertical"
-        MDCard:
-            md_bg_color: "#C5FFFD"
-            size_hint: .6, .1
-            pos_hint: {"center_x":.5, "center_y":.5}
-            orientation: "vertical"
-
-            MDLabel:
-                size_hint: 1,.1
-                font_style: "H3"
-                text: "Fridges"
-                halign: "center"
-
-        MDBoxLayout:
-            orientation: "horizontal"
-
-            MDFillRoundFlatIconButton:
-                text: "Back"
-                icon: "arrow-left"
-                pos_hint: {"center_x": .5, "center_y":.1}
-                on_release: app.root.current = "MenuScreen"
-
-            MDRaisedButton:
-                text: "Delete"
-                size_hint_x: .1
-                pos_hint: {"center_x":.5, "center_y":.1}
-                on_press: root.delete()
-            MDRaisedButton:
-                text: "Add"
-                size_hint_x: .1
-                pos_hint: {"center_x":.5, "center_y":.1}
-                on_press: app.root.current = "new_item_f"
-            MDFillRoundFlatIconButton:
-                text: "Update"
-                icon: "content-save"
-                pos_hint: {"center_x": .5, "center_y":.1}
-                on_release: root.update()
-
-<AddItemScreen_5>:
-    MDBoxLayout:
-        orientation: "vertical"
-        spacing: dp(10)
-        padding: dp(20)
-
-        MDTextField:
-            id: Item  # Fixed id name
-            hint_text: "Item"
-            mode: "fill"
-            fill_color: 1, 1, 1, 0.8
-            icon_right: "barcode-scan"
-            icon_right_color: app.theme_cls.primary_color
-
-        MDTextField:
-            id: Fridge
-            hint_text: "Fridge"
-            mode: "fill"
-            fill_color: 1, 1, 1, 0.8
-            icon_right: "arrow-right"
-            icon_right_color: app.theme_cls.primary_color
-
-        MDTextField:
-            id: Shelve
-            hint_text: "Shelve"
-            mode: "fill"
-            fill_color: 1, 1, 1, 0.8
-            icon_right: "arrow-right"
-            icon_right_color: app.theme_cls.primary_color
-
-        MDTextField:
-            id: Amount
-            hint_text: "Amount"
-            mode: "fill"
-            fill_color: 1, 1, 1, 0.8
-            icon_right: "numeric"
-            icon_right_color: app.theme_cls.primary_color
-
-        MDTextField:
-            id: Company
-            hint_text: "Company"
-            mode: "fill"
-            fill_color: 1, 1, 1, 0.8
-            icon_right: "office-building"
-            icon_right_color: app.theme_cls.primary_color
-
-        MDFillRoundFlatIconButton:
-            text: "Save"
-            icon: "content-save"
-            pos_hint: {"center_x": 0.5}
-            on_release: root.new_item_f()
-
-        MDFillRoundFlatIconButton:
-            text: "Cancel"
-            icon: "cancel"
-            pos_hint: {"center_x": 0.5}
-            on_release: app.root.current = "FridgesScreen"
-
-
-#Inventory
-<InventoryScreen>:
-    MDBoxLayout:
-        orientation: "vertical"
-        MDCard:
-            md_bg_color: "#EB4511"
-            size_hint: .6, .1
-            pos_hint: {"center_x":.5, "center_y":.5}
-            orientation: "vertical"
-
-            MDLabel:
-                size_hint: 1,.1
-                font_style: "H3"
-                text: "Inventory"
-                halign: "center"
-
-
-        MDBoxLayout:
-            orientation: "horizontal"
-
-            MDFillRoundFlatIconButton:
-                text: "Back"
-                icon: "arrow-left"
-                pos_hint: {"center_x": .5, "center_y":.1}
-                on_release: app.root.current = "MenuScreen"
-
-            MDRaisedButton:
-                text: "Delete"
-                size_hint_x: .1
-                pos_hint: {"center_x":.5, "center_y":.1}
-                on_press: root.delete()
-
-            MDFillRoundFlatIconButton:
-                text: "Update"
-                icon: "content-save"
-                pos_hint: {"center_x": .5, "center_y":.1}
-                on_release: root.update()
 ```
+The add item screen I used it as a general template for all the AddItem screen for the kkivy file because they folllowed the same structure.
 
 ---
 <img width="1054" alt="Screen Shot 2023-03-09 at 17 07 23" src="https://user-images.githubusercontent.com/111941990/223959565-75731030-1a0a-4136-8079-861c4903a393.png">
