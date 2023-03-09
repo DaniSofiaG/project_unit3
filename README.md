@@ -14,7 +14,7 @@ Meisa is the manager of a convenience store. Last year while doing the end of ye
 
 
 ## Proposed Solution
-To create the program, I will use Python and KivyMD to build a user interface that allows Meisa to manage the data for her store. I will use an object-oriented approach (OPP) to create classes for the various data entities like products, suppliers, aisles, and staff, and use methods within each class to manage the data.
+To create the program, I will use Python and KivyMD to build a user interface that allows Meisa to manage the data for her store. I will use an object-oriented approach (OPP) to create classes for the various data entities like products, suppliers, aisles, and use methods within each class to manage the data.
 
 I will use a SQL database to store and manage the data for the store. The database will be designed with MDDataTables for each of the data entities. I will use the SQLite database management system, which is simple and compatible with Python.
 
