@@ -276,6 +276,6 @@ class Inventory:
 <img width="1067" alt="Screen Shot 2023-03-09 at 9 03 36" src="https://user-images.githubusercontent.com/111941990/223880914-0af17701-eef8-40fa-94d8-4d15886c84ab.png">
 
 ---
-<img width="793" alt="Screen Shot 2023-03-09 at 17 05 00" src="https://user-images.githubusercontent.com/111941990/223959440-241f52a3-1f46-4241-a1eb-341676b37847.png">
+<img width="1054" alt="Screen Shot 2023-03-09 at 17 07 23" src="https://user-images.githubusercontent.com/111941990/223959565-75731030-1a0a-4136-8079-861c4903a393.png">
 
 # Criterion D
