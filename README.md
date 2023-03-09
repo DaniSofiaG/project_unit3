@@ -156,6 +156,10 @@ class LoginScreen(MDScreen):
                 print("Passwords don't match")
 
 ```
+This is a Python code for a login screen class that extends from the MDScreen class. The code defines a ```try_login()``` function that is called when the user tries to log in.The function starts by retrieving the username and password entered by the user from the respective text input fields. I then have the SQL query to search for the user in the database using the username. With the ```database_worker()``` I connect to my SQLite database named ```db_login.db```.
+
+The result of the query is stored in the 'result' variable, and the connection to the database is closed. The code then retrieves the hashed password from the query result and uses the ```check_password()``` function to compare it with the user’s input. If the passwords match, the user is redirected to the ```MenuScreen```, and the text input fields are cleared. Otherwise, an error message is printed and the user stays on the login screen. The ```loginScreen``` is the first thing that appears in my program and I constantly re-use it to send the user back, for example when login out or after registration.
+
 
 ## Registration
 ```.py
