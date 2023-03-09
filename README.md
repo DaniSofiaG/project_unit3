@@ -66,6 +66,8 @@ The development process will take approximately 4 weeks, after which I will cond
 
 
 ## Test Plan
+
+## Tasks
 | Task No |              Planned Action              |                                   Planned Outcome                                   | Time estimate | Target completion date | Criterion |
 |:-------:|:----------------------------------------:|:-----------------------------------------------------------------------------------:|:-------------:|:----------------------:|:---------:|
 |    1    |             Getting a client             |                  Client described her requiremetns for the project                  |     5 min     |         Feb 10         |     A     |
