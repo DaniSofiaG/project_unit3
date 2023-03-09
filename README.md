@@ -67,11 +67,14 @@ The development process will take approximately 4 weeks, after which I will cond
 ## ER Diagram
 ![Er diagram (1)](https://user-images.githubusercontent.com/111941990/224063869-8a0d77d0-53e4-49a4-b0ff-1e94d7d838f7.png)
 
-## Flow Diagram
+## Flow Diagrams
 ### LoginScreen- Flow Diagram
 ![3rd Flow chart](https://user-images.githubusercontent.com/111941990/224075832-de70e392-ad91-4622-b866-da145f8bc95e.png)
 ### Database_worker- Flow Diagram
 ![database_worker Flow chart](https://user-images.githubusercontent.com/111941990/224095818-b2c11bc9-9410-4e5e-98fb-b484214889fb.png)
+### AddItemScreen- Flow Diagram
+![AddItem- Flow Diagram](https://user-images.githubusercontent.com/111941990/224099829-751090fc-ce75-49b4-87eb-ad8a595c0228.png)
+
 
 
 
