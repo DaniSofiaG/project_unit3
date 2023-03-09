@@ -123,6 +123,14 @@ def check_password(hashed_password, user_password):
     return hasher.verify(user_password, hashed_password)
 ```
 
+One of the success criteria that the client wanted in its programs is that “The program automatically hashes the user's password information”. In order for this to happen I created a set of functions during class, in the file  ``` secure_password.py ```  that uses the ``` passlib ``` library to hash passwords securely. The code defines two functions: ```encrypt_password```  and ```check_password```.
+
+The ``` encrypt_password``` function takes an unsafe plain-text password as an argument and returns a hashed version of it using the SHA-256 cryptographic hash function. The hashed password is created using the CryptContext object, which is instantiated from the sha256_crypt class with a parameter 'rounds=30000'. The higher the number of rounds, the more secure the hash function becomes.
+
+The "check_password" function takes a hashed password and a plain-text password as arguments. It then verifies whether the plain-text password matches the hashed password using the verify method provided by the sha256_crypt object. The verify method returns a Boolean value indicating whether the password is a match or not.
+
+
+
 
 ## Login
 ```.py
