@@ -134,7 +134,7 @@ The development process will take approximately 4 weeks, after which I will cond
 |    33   |                                                   Finalize my repository with all criteria complete                                                  |                                                       Complete repository                                                      |     6 hrs     |          Mar 9         | A, B, C, D |
 
 ## Evidence
-<img width="1067" alt="Screen Shot 2023-03-09 at 9 03 36" src="https://user-images.githubusercontent.com/111941990/223880914-0af17701-eef8-40fa-94d8-4d15886c84ab.png">
+<img width="546" alt="Screen Shot 2023-03-10 at 2 04 19" src="https://user-images.githubusercontent.com/111941990/224101573-931e879e-f927-4436-b178-4c7e95c9aa0f.png">
 
 ---
 <img width="1108" alt="Screen Shot 2023-03-09 at 17 04 23" src="https://user-images.githubusercontent.com/111941990/223959341-1fd88518-b2d1-42e1-bdee-cfa5b9f58872.png">
