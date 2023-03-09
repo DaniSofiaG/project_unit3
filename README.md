@@ -1185,3 +1185,6 @@ ScreenManager:
 <img width="1054" alt="Screen Shot 2023-03-09 at 17 07 23" src="https://user-images.githubusercontent.com/111941990/223959565-75731030-1a0a-4136-8079-861c4903a393.png">
 
 # Criterion D
+## Video link
+https://drive.google.com/file/d/1SVK2XTKwq2TzD0mghma51RkyDYSUDXH2/view?usp=sharing
+
