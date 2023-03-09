@@ -277,6 +277,11 @@ And finally, this part finalizes the registration and saves it into ```users``` 
         print("a row was checked", current_row)
 
 ```
+I used this code several times, to create the datatables of each one of the aisles, although I think that the end results were great, I do think that I could have done it in an easier way, probably by creating a loop. The code defines a class that creates and displays a data table using the KivyMD library. The data table is used to display a list of items, with columns for the item ID, name, aisle, shelve, amount, and company.
+
+The ```__init__ ``` method initializes the class and creates a new ```MDDataTable```. The ```size_hint``` and ```pos_hint``` arguments set the size and position of the table. The check and ```use_pagination``` arguments enable row selection and pagination.
+
+The ```column_data``` argument defines the table columns, with each column represented as a tuple that contains the column name and its width. The ```row_data``` enables the selection of the item information in a row. The ```row_pressed method``` is called when a row in the table is pressed. The method takes two arguments, table and row, and sets the background color of the pressed row to a different color so that the program is as user-friendly as possible. The ```check_pressed``` method is called when a row in the table is checked. The method takes two arguments, table and current_row, and prints a message indicating that a row was checked.
 
 ## Use of Relational database
 ```.py
