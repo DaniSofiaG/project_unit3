@@ -606,4 +606,13 @@ https://drive.google.com/file/d/1SVK2XTKwq2TzD0mghma51RkyDYSUDXH2/view?usp=shari
 
 ---
 <img width="1116" alt="Screen Shot 2023-03-10 at 1 33 53" src="https://user-images.githubusercontent.com/111941990/224089988-e7f275e4-af83-4e71-860b-4f9d39684863.png">
+
 # Citations
+
+KivyMD. "Spinner." KivyMD, Version 1.1.1, 2021, https://kivymd.readthedocs.io/en/1.1.1/components/spinner/.
+
+KivyMD. "BottomNavigation." KivyMD, Version 1.1.1, 2021, https://kivymd.readthedocs.io/en/1.1.1/components/bottomnavigation/.
+
+KivyMD. "Theming." KivyMD, Version 1.1.1, 2021, https://kivymd.readthedocs.io/en/1.1.1/themes/theming/.
+
+KivyMD. "Icon Definitions." KivyMD, Version 1.1.1, 2021, https://kivymd.readthedocs.io/en/1.1.1/themes/icon-definitions/.
