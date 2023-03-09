@@ -48,7 +48,7 @@ The development process will take approximately 4 weeks, after which I will cond
 9. The app has easy to understand labels and interface to make it easier for the client Meisa to implement it at her store.
 
 ## System Diagram
-![Untitled drawing (2)](https://user-images.githubusercontent.com/111941990/223357612-a1415042-da9f-454f-8bc4-2a2bb066b110.png)
+![Project_3 system diagram](https://user-images.githubusercontent.com/111941990/223882562-09e23bb1-13d5-4bc1-994e-e5b2b9038f9b.png)
 
 
 ## Test Plan
