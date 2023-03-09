@@ -2,6 +2,8 @@
 
 ![The Wonderful World of Japan’s Incredible Convenience Stores](https://user-images.githubusercontent.com/111941990/218233255-1c0c1ab4-c711-4ab8-b310-7a1c23530967.jpeg)
 
+---
+<img width="1101" alt="Screen Shot 2023-03-09 at 17 04 02" src="https://user-images.githubusercontent.com/111941990/223959239-731557bc-bb27-48c0-97d9-38f2f58d5b0e.png">
 
 # Criteria A: Planning
 
@@ -47,6 +49,10 @@ The development process will take approximately 4 weeks, after which I will cond
 8. The app uses databases to store information such as users and the data in the MDDataTables.
 9. The app has easy to understand labels and interface to make it easier for the client Meisa to implement it at her store.
 
+---
+<img width="1136" alt="Screen Shot 2023-03-08 at 17 57 36" src="https://user-images.githubusercontent.com/111941990/223959197-cdfeb104-c252-49ea-b28d-ca950ae8240d.png">
+
+
 ## System Diagram
 ![Project_3 system diagram](https://user-images.githubusercontent.com/111941990/223882562-09e23bb1-13d5-4bc1-994e-e5b2b9038f9b.png)
 
@@ -61,7 +67,7 @@ The development process will take approximately 4 weeks, after which I will cond
 |    5    |       Getting the client's approval      | Evidence of the clients agreement with the proposed solution  and design sptatement |     10 min    |         Feb 19         |     A     |
 
 ---
-<img width="1136" alt="Screen Shot 2023-03-08 at 17 57 36" src="https://user-images.githubusercontent.com/111941990/223668408-4ba5ab24-015b-46df-93ba-89971d0159f9.png">
+<img width="1108" alt="Screen Shot 2023-03-09 at 17 04 23" src="https://user-images.githubusercontent.com/111941990/223959341-1fd88518-b2d1-42e1-bdee-cfa5b9f58872.png">
 
 
 # Criterion C- Development
@@ -85,6 +91,24 @@ cursor.execute(query)
 connection.commit()
 connection.close()
 ```
+
+## Secure password
+```.py
+# secure_password.py
+from passlib.hash import sha256_crypt
+
+#Create an object of the class CryptContext
+hasher= sha256_crypt.using(rounds=30000)
+
+#this function receives the unsafe password
+# and returns the hashed password
+def encrypt_password(user_password):
+    return hasher.hash(user_password)
+
+def check_password(hashed_password, user_password):
+    return hasher.verify(user_password, hashed_password)
+```
+
 
 ## Login
 ```.py
@@ -136,7 +160,6 @@ class RegistrationScreen(MDScreen):
                 self.ids.passwd_confirm.helper_text = "Passwords do not match"
             return
 ```
-
 #### Email policy
 ```.py
 # Check email policy
@@ -214,5 +237,45 @@ class RegistrationScreen(MDScreen):
 
 ```
 
+## Use of Relational database
+```.py
+class Inventory:
+    def __init__(self, db_name):
+        self.db_name = db_name
+        self.db = database_worker(db_name)
+
+    def get_all_data(self):
+        tables = ['aisle37', 'aisle_2', 'aisle_3', 'aisle_4', 'fridges']
+        all_data = []
+        for table in tables:
+            query = f"SELECT * from {table}"
+            result = self.db.search(query=query)
+            all_data += result
+        return all_data
+
+    def save_to_complete_inventory(self, data):
+        self.db.run_save("DROP TABLE IF EXISTS complete_inventory")
+        self.db.run_save("""CREATE TABLE complete_inventory(
+            id INTEGER PRIMARY KEY,
+            item TEXT NOT NULL,
+            aisle TEXT NOT NULL,
+            shelve TEXT NOT NULL,
+            amount TEXT NOT NULL,
+            company TEXT NOT NULL
+        )""")
+        for item in data:
+            query = f"""INSERT INTO complete_inventory(item, aisle, shelve, amount, company)
+            VALUES('{item[1]}', '{item[2]}', '{item[3]}', '{item[4]}', '{item[5]}')"""
+            self.db.run_save(query)
+
+    def close(self):
+        self.db.close()
+```
+
 # Evidence
 <img width="1067" alt="Screen Shot 2023-03-09 at 9 03 36" src="https://user-images.githubusercontent.com/111941990/223880914-0af17701-eef8-40fa-94d8-4d15886c84ab.png">
+
+---
+<img width="793" alt="Screen Shot 2023-03-09 at 17 05 00" src="https://user-images.githubusercontent.com/111941990/223959440-241f52a3-1f46-4241-a1eb-341676b37847.png">
+
+# Criterion D
