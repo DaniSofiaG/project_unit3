@@ -58,7 +58,7 @@ The development process will take approximately 4 weeks, after which I will cond
 ![Project_3 system diagram](https://user-images.githubusercontent.com/111941990/223882562-09e23bb1-13d5-4bc1-994e-e5b2b9038f9b.png)
 
 ## Wireframe Diagram
-![Wireframe diagram](https://user-images.githubusercontent.com/111941990/223981617-c528ec9f-281d-41d9-9372-095605d71c3f.png)
+![Wireframe diagram](https://user-images.githubusercontent.com/111941990/223982034-ccf3cdeb-592b-4a87-b0d8-b2a953f5e471.png)
 
 
 
