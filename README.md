@@ -60,6 +60,9 @@ The development process will take approximately 4 weeks, after which I will cond
 ## Wireframe Diagram
 ![Wireframe diagram (2)](https://user-images.githubusercontent.com/111941990/223984515-8810b102-adf5-4346-b2be-2421a11579f3.png)
 
+## UML Diagram
+![UML_diagram](https://user-images.githubusercontent.com/111941990/223997898-93b6cbc5-725e-4c71-839f-b31b7b34972e.png)
+
 
 
 ## Test Plan
