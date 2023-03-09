@@ -604,3 +604,6 @@ The add item screen I used it as a general template for all the AddItem screen f
 ## Video link
 https://drive.google.com/file/d/1SVK2XTKwq2TzD0mghma51RkyDYSUDXH2/view?usp=sharing
 
+---
+<img width="1116" alt="Screen Shot 2023-03-10 at 1 33 53" src="https://user-images.githubusercontent.com/111941990/224089988-e7f275e4-af83-4e71-860b-4f9d39684863.png">
+# Citations
