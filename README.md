@@ -326,6 +326,8 @@ The method ```save_to_complete_inventory``` creates a new table named ```complet
 Finally, the ```close``` method closes the connection to the database by calling the ```close``` method on the ```database_worker```.
 
 ## KivyMD File
+This is my complete ```kivyMD``` file where I strudctured my entire program, creating layouts to stucture approcirate text and labels, buttons and a bottom menu that allows the client and any user of the progam to navigate the app.
+
 ```.py
 #login.kv
 ScreenManager:
