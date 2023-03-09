@@ -213,3 +213,6 @@ class RegistrationScreen(MDScreen):
         print("a row was checked", current_row)
 
 ```
+
+# Evidence
+<img width="1067" alt="Screen Shot 2023-03-09 at 9 03 36" src="https://user-images.githubusercontent.com/111941990/223880914-0af17701-eef8-40fa-94d8-4d15886c84ab.png">
